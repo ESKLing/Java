@@ -1,6 +1,6 @@
 package com.eskl.groceryseller;
 
-public class GroceryItem {
+public abstract class GroceryItem {
     private String name;     // only this class has access to this field
     double price;
     String type;
@@ -11,9 +11,7 @@ public class GroceryItem {
         this.type = type;
     }
 
-    public void consume() {
-
-    }
+    public abstract void consume();
 
     public String getName() {    //allows other classes to get the name
         return name;

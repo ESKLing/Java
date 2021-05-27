@@ -16,4 +16,5 @@ public class Beer extends GroceryItem {
     public double getAlcoholContent() {
         return alcoholContent;
     }
+
 }

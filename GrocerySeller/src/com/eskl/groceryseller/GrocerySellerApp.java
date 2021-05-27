@@ -13,14 +13,15 @@ public class GrocerySellerApp {
         User elaine = new User("ESKL", 24, "Admin", 1, benAndElaineAddress);
         System.out.println(elaine);
 
-//        GroceryItem bread = new GroceryItem("bread", 1.99);
         Bread bread = new Bread();
 
-        GroceryItem apple = new GroceryItem("apple", 0.20, "fruit");
+//        GroceryItem apple = new GroceryItem("apple", 0.20, "fruit");
 
         Beer cass = new Beer("cass", 2.50, 3.9);
 
-        List<GroceryItem> groceryItemList = Arrays.asList(bread, apple, cass);
+        List<GroceryItem> groceryItemList = Arrays.asList(bread,
+//                apple,
+                cass);
         System.out.println(groceryItemList);
 
         for (GroceryItem item: groceryItemList) {
