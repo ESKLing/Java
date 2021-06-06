@@ -1,7 +1,7 @@
 package com.eskl.groceryseller;
 
-public class Basket {
-    // TODO load basket
-    // TODO add to basket
-    // TODO remove from basket
+interface Basket {
+    void load();
+    void add(GroceryItem item);
+    void remove();
 }

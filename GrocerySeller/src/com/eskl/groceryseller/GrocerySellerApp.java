@@ -6,12 +6,16 @@ import java.util.List;
 public class GrocerySellerApp {
 
     public static void main(String[] args) {
+        GrocerySellerApp grocerySellerApp = new GrocerySellerApp();
+        grocerySellerApp.run();
+    }
+
+    public void run() {
+
         Address benAndElaineAddress = new Address("123 St", "AB1 CD2");
         User ben = new User("BLD", 27, "Senior Engineer", 5.6F, benAndElaineAddress);
-        System.out.println(ben);
 
         User elaine = new User("ESKL", 24, "Admin", 1, benAndElaineAddress);
-        System.out.println(elaine);
 
         Bread bread = new Bread();
 
@@ -25,7 +29,6 @@ public class GrocerySellerApp {
         System.out.println(groceryItemList);
 
         for (GroceryItem item: groceryItemList) {
-            System.out.println(item.getName());
             if (item instanceof Beer) {
                 Beer beer = (Beer) item;    //creating a new reference of type Beer to the existing instantiated object previously having ref type GroceryItem
                 System.out.println(beer.getAlcoholContent());
@@ -42,7 +45,11 @@ public class GrocerySellerApp {
             item.consume();
         }
 
-
+        Basket basket = new BasketImpl();
+        basket.add(bread);
+        basket.add(cass);
+        basket.load();
+        basket.remove();
         // define items
         // load item(s)
         // pick item(s)
