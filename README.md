@@ -1,3 +1,3 @@
 # Java
 
-Code practice in java.
+Code practice in Java.
