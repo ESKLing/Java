@@ -1,14 +1,14 @@
 package com.eskl.todoapp.todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "todo")
+@CrossOrigin("*")
+// cross origin allows everything ("*") to access this back end
 public class ToDoController {
 
     private final ToDoService toDoService;
@@ -23,9 +23,10 @@ public class ToDoController {
         return toDoService.getToDos();
     }
 
-    @GetMapping(value = "addNew")
-    public void addNew(){
-        ToDo makeLunch = new ToDo("Make Lunch");
-        toDoService.createToDo(makeLunch);
+    @PostMapping(path = "addNew")
+    public ToDo addNew(){
+        ToDo toDoEx = new ToDo("To Do");
+        toDoService.createToDo(toDoEx);
+        return toDoEx;
     }
 }

@@ -19,7 +19,7 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
-    public void createToDo(ToDo makeLunch){
-        toDoRepository.save(makeLunch);
+    public void createToDo(ToDo toDoEx){
+        toDoRepository.save(toDoEx);
     }
 }
