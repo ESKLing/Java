@@ -24,10 +24,8 @@ public class ToDoController {
     }
 
     @PostMapping(path = "addNew")
-    public ToDo addNew(){
-        ToDo toDoEx = new ToDo("To Do");
-        toDoService.createToDo(toDoEx);
-        return toDoEx;
+    public void addNew(@RequestBody ToDo newToDo){
+        toDoService.saveToDo(newToDo);
     }
 
     @DeleteMapping(path = "{id}/delete")

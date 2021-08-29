@@ -19,8 +19,8 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
-    public void createToDo(ToDo toDoEx){
-        toDoRepository.save(toDoEx);
+    public void saveToDo(ToDo newToDo){
+        toDoRepository.save(newToDo);
     }
 
     public void deleteToDo(Long id) {
