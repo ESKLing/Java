@@ -28,6 +28,11 @@ public class ToDoController {
         toDoService.saveToDo(newToDo);
     }
 
+    @PutMapping(path = "{id}/update")
+    public void updateToDo(@PathVariable("id") Long id, @RequestBody ToDo updatedToDo){
+        toDoService.updateToDo(id, updatedToDo);
+    }
+
     @DeleteMapping(path = "{id}/delete")
     public void deleteToDo(@PathVariable("id") Long id){
         toDoService.deleteToDo(id);

@@ -23,7 +23,15 @@ public class ToDoService {
         toDoRepository.save(newToDo);
     }
 
+    public void updateToDo(Long id, ToDo updatedToDo) {
+        ToDo toDoInDB = toDoRepository.findById(id).get();
+        toDoInDB.setName(updatedToDo.getName());
+        toDoRepository.save(toDoInDB);
+    }
+
     public void deleteToDo(Long id) {
         toDoRepository.deleteById(id);
     }
+
+
 }
