@@ -24,14 +24,16 @@ public class ToDoService {
     }
 
     public void updateToDo(Long id, ToDo updatedToDo) {
+        System.out.println(updatedToDo);
         ToDo toDoInDB = toDoRepository.findById(id).get();
         toDoInDB.setName(updatedToDo.getName());
+        toDoInDB.setChecked(updatedToDo.getChecked());
         toDoRepository.save(toDoInDB);
+        System.out.println(toDoInDB);
     }
 
     public void deleteToDo(Long id) {
         toDoRepository.deleteById(id);
     }
-
 
 }

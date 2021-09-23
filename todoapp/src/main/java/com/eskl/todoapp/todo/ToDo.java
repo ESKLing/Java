@@ -19,10 +19,12 @@ public class ToDo {
 
     private Long id;
     private String name;
+    private Boolean checked = false;
 
-    public ToDo(Long id, String name) {
+    public ToDo(Long id, String name, Boolean checked) {
         this.id = id;
         this.name = name;
+        this.checked = checked;
     }
 
     // as the database will automatically generate the ID for us
@@ -51,11 +53,20 @@ public class ToDo {
         this.name = name;
     }
 
+    public Boolean getChecked() {
+        return checked;
+    }
+
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
+    }
+
     @Override
     public String toString() {
         return "ToDo{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name +
+                ", checked='" + checked + '\'' +
                 '}';
     }
 }
