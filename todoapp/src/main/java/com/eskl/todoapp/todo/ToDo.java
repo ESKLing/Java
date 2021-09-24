@@ -1,5 +1,7 @@
 package com.eskl.todoapp.todo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,9 +21,10 @@ public class ToDo {
 
     private Long id;
     private String name;
-    private Boolean checked = false;
 
-    public ToDo(Long id, String name, Boolean checked) {
+    private boolean checked;
+
+    public ToDo(Long id, String name, boolean checked) {
         this.id = id;
         this.name = name;
         this.checked = checked;
